@@ -8,7 +8,10 @@ Template.post_create.events({
             title: title,
             url: url
         };
-        Posts.insert(data);
-        Router.go('home');
+        Meteor.call('postInsert', data, function(error, result){
+            if(error)
+                return alert(error.reason);
+            Router.go('home');
+        });
     }
 });
