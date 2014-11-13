@@ -8,4 +8,5 @@ mizzao:bootstrap-3
 iron:router
 accounts-password
 ian:accounts-ui-bootstrap-3
+sacha:spin
 
