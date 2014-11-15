@@ -1,15 +1,17 @@
 <template name="post_create">
 <section class="container create-form">
 <form role="form">
-  <div class="form-group">
-      <label for="title">title</label>
-    <input type="text" class="form-control" id="title" placeholder="">
+    <fieldset>
+    <div class="form-group {{titleValidator}}">
+      <label for="title" class="control-label">title {{titleInfo}}</label>
+      <input type="text" class="form-control" id="title" placeholder="Enter title">
   </div>
-  <div class="form-group">
-    <label for="url">url</label>
-    <input type="text" class="form-control" id="url" placeholder="">
+  <div class="form-group {{urlValidator}}">
+    <label for="url" class="control-label">url {{urlInfo}}</label>
+    <input type="text" class="form-control" id="url" placeholder="Enter url">
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  </fieldset>
+  <button type="submit" class="btn btn-success {{buttonStatus}}">Submit</button>
 </form>
 </section>
 </template>
