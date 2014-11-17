@@ -2,7 +2,6 @@ Session.set("titleValidator","");
 Session.set("titleInfo","");
 Session.set("urlValidator","");
 Session.set("urlInfo","");
-Session.set("buttonStatus","");
 
 Template.post_create.helpers({
     titleValidator: function(){
@@ -16,9 +15,6 @@ Template.post_create.helpers({
     },
     urlInfo: function(){
         return Session.get("urlInfo");
-    },
-    buttonStatus: function(){
-        return Session.get("buttonStatus");
     }
 });
 
@@ -31,30 +27,25 @@ Template.post_create.events({
         }
         else{
             Session.set("titleValidator", "has-error");
-            Session.set("titleInfo", "(title is required)");
-            Session.set("buttonStatus", "disabled");
+            Session.set("titleInfo", "(Title is required!)");
         }
     },
 
     'blur #url': function(event, template){
         var url = event.target.value;
-        if(url){
-            Session.set("urlValidator", "has-success");
-            Session.set("urlInfo", "");
+        var urlRegex = /^((http|https):\/\/(\w+:{0,1}\w*@)?(\S+)|)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/;
+
+        if(!url){
+            Session.set("urlValidator", "has-error");
+            Session.set("urlInfo", "(Url is required!)");
+        }
+        else if(!urlRegex.test(url)){
+            Session.set("urlValidator", "has-error");
+            Session.set("urlInfo", "(Url is not valid!)");
         }
         else {
-            Session.set("urlValidator", "has-error");
-            Session.set("urlInfo", "(url is required)");
-            Session.set("buttonStatus", "disabled");
-        }
-    },
-
-    'blur fieldset': function(event,template){
-        var title = event.target.title.value;
-        var url = event.target.title.value;
-        alert(title);
-        if(title && url){
-            Session.set("buttonStatus", "");
+            Session.set("urlValidator", "has-success"); 
+            Session.set("urlInfo", "");
         }
     },
 

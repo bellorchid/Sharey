@@ -5,7 +5,10 @@
         <span>{{url}}</span>
     </div>
     <div class="panel-footer">
+        {{author}}
+        {{#if isAuthor}}
         <a href="{{pathFor route='post.edit'}}">edit</a>
+        {{/if}}
     </div>
 </div>
 </template>
