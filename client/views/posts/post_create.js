@@ -19,9 +19,14 @@ Template.post_create.helpers({
 });
 
 Template.post_create.events({
-    'blur #title': function(event, template){
-        var title = event.target.value;
-        if(title){
+    'blur #title, blur #url': function(event, template){
+        var post = {
+            title : template.$('#title').val(),
+            url   : template.$('#url').val()
+        };
+        var errors = validatePost(post);
+
+        if(!errors.title){
             Session.set("titleValidator", "has-success");
             Session.set("titleInfo", "");
         }
@@ -29,19 +34,18 @@ Template.post_create.events({
             Session.set("titleValidator", "has-error");
             Session.set("titleInfo", "(Title is required!)");
         }
-    },
 
-    'blur #url': function(event, template){
-        var url = event.target.value;
-        var urlRegex = /^((http|https):\/\/(\w+:{0,1}\w*@)?(\S+)|)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/;
-
-        if(!url){
+        if(errors.url === "empty"){
             Session.set("urlValidator", "has-error");
             Session.set("urlInfo", "(Url is required!)");
         }
-        else if(!urlRegex.test(url)){
+        else if(errors.url === "invalid"){
             Session.set("urlValidator", "has-error");
             Session.set("urlInfo", "(Url is not valid!)");
+        }
+        else if(errors.url === "existed"){
+            Session.set("urlValidator", "has-error");
+            Session.set("urlInfo", "(This submit is existed!)");
         }
         else {
             Session.set("urlValidator", "has-success"); 

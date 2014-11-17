@@ -3,11 +3,11 @@
 <form role="form">
     <fieldset>
     <div class="form-group {{titleValidator}}">
-      <label for="title" class="control-label">title {{titleInfo}}</label>
+        <label for="title" class="control-label">title <span class="error-msg">{{titleInfo}}</span></label>
       <input type="text" class="form-control" name="title" id="title" placeholder="Enter title">
   </div>
   <div class="form-group {{urlValidator}}">
-    <label for="url" class="control-label">url {{urlInfo}}</label>
+      <label for="url" class="control-label">url <span class="error-msg">{{urlInfo}}</span></label>
     <input type="text" class="form-control" name="url" id="url" placeholder="Enter url">
   </div>
   </fieldset>
