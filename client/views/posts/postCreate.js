@@ -3,7 +3,7 @@ Session.set("titleInfo","");
 Session.set("urlValidator","");
 Session.set("urlInfo","");
 
-Template.post_create.helpers({
+Template.postCreate.helpers({
     titleValidator: function(){
         return Session.get("titleValidator");
     },
@@ -18,7 +18,7 @@ Template.post_create.helpers({
     }
 });
 
-Template.post_create.events({
+Template.postCreate.events({
     'blur #title, blur #url': function(event, template){
         var post = {
             title : template.$('#title').val(),
