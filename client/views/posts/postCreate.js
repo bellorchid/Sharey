@@ -1,26 +1,9 @@
-<<<<<<< HEAD
-Session.set("titleValidator","");
-Session.set("titleInfo","");
-Session.set("urlValidator","");
-Session.set("urlInfo","");
-
-Template.postCreate.helpers({
-    titleValidator: function(){
-        return Session.get("titleValidator");
-    },
-    titleInfo: function(){
-        return Session.get("titleInfo");
-    },
-    urlValidator: function(){
-        return Session.get("urlValidator");
-=======
 Template.postCreate.created = function() {
     Session.set('postCreateErrors', {});
 }
 Template.postCreate.helpers({
     errorMsg: function(field){
         return Session.get('postCreateErrors')[field];
->>>>>>> errors
     },
     errorClass: function(field){
         return !!Session.get('postCreateErrors')[field]?'has-error':'';
