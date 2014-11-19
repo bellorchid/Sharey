@@ -13,7 +13,9 @@ Template.PostEdit.events({
         };
 
         Posts.update(currentPostId, {$set: postProperties},function(error){
-            if(error){ alert(error.reason); }
+            if(error){
+                throwError(error.reason);
+            }
             else { Router.go('home'); }
         });
     },
