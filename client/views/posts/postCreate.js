@@ -17,7 +17,6 @@ Template.postCreate.events({
             url   : template.$('#url').val()
         };
         var errors = validatePost(post);
-        console.log(errors);
         if(errors.title || errors.url){
             Session.set('postCreateErrors', errors);
         }
