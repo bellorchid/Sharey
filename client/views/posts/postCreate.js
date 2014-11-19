@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Session.set("titleValidator","");
 Session.set("titleInfo","");
 Session.set("urlValidator","");
@@ -12,9 +13,17 @@ Template.postCreate.helpers({
     },
     urlValidator: function(){
         return Session.get("urlValidator");
+=======
+Template.postCreate.created = function() {
+    Session.set('postCreateErrors', {});
+}
+Template.postCreate.helpers({
+    errorMsg: function(field){
+        return Session.get('postCreateErrors')[field];
+>>>>>>> errors
     },
-    urlInfo: function(){
-        return Session.get("urlInfo");
+    errorClass: function(field){
+        return !!Session.get('postCreateErrors')[field]?'has-error':'';
     }
 });
 
@@ -25,31 +34,8 @@ Template.postCreate.events({
             url   : template.$('#url').val()
         };
         var errors = validatePost(post);
-
-        if(!errors.title){
-            Session.set("titleValidator", "has-success");
-            Session.set("titleInfo", "");
-        }
-        else{
-            Session.set("titleValidator", "has-error");
-            Session.set("titleInfo", "(Title is required!)");
-        }
-
-        if(errors.url === "empty"){
-            Session.set("urlValidator", "has-error");
-            Session.set("urlInfo", "(Url is required!)");
-        }
-        else if(errors.url === "invalid"){
-            Session.set("urlValidator", "has-error");
-            Session.set("urlInfo", "(Url is not valid!)");
-        }
-        else if(errors.url === "existed"){
-            Session.set("urlValidator", "has-error");
-            Session.set("urlInfo", "(This submit is existed!)");
-        }
-        else {
-            Session.set("urlValidator", "has-success"); 
-            Session.set("urlInfo", "");
+        if(errors.title || errors.url){
+            Session.set('postCreateErrors', errors);
         }
     },
 
@@ -57,13 +43,13 @@ Template.postCreate.events({
         event.preventDefault();
         var title = event.target.title.value;
         var url = event.target.url.value;
-        var data = {
+        var post = {
             title: title,
             url: url
         };
-        Meteor.call('postInsert', data, function(error, result){
-            if(error)
-                return alert(error.reason);
+        Meteor.call('postInsert', post, function(errors, result){
+            if(errors)
+                return throwError(errors.reason);
             Router.go('home');
         });
     }
