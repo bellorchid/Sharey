@@ -1,3 +1,34 @@
+.float-right {
+    float: right;
+}
+.folat-left {
+    float: left;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clear:after {
+    clear:both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.post-title {
+    font-size: 2rem;
+}
+.post-url {
+    font-size: 1.5rem;
+    color: #b3c1c6;
+}
+.post-author {
+    font-weight: bold;
+}
+
 .alert {
   animation: fadeOut 2700ms ease-in 0s 1 forwards;
   -webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;

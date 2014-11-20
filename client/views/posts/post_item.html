@@ -1,13 +1,13 @@
 <template name="post_item">
 <div class="panel panel-default">
     <div class="panel-heading">
-        <strong><a href="{{url}}">{{title}}</a></strong>
-        <span>{{url}}</span>
+        <strong class="post-title"><a href="{{url}}">{{title}}</a></strong>
+        <span class="post-url">{{url}}</span>
     </div>
-    <div class="panel-footer">
-        {{author}}
+    <div class="panel-footer clearfix post-meta">
+        <span class="post-author">{{author}}</span> submit on {{submitted}}
         {{#if isAuthor}}
-        <a href="{{pathFor route='post.edit'}}">edit</a>
+        <a href="{{pathFor route='post.edit'}}" class="float-right">edit</a>
         {{/if}}
     </div>
 </div>
