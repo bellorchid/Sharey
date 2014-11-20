@@ -19,6 +19,8 @@ Template.postCreate.events({
         var errors = validatePost(post);
         if(errors.title || errors.url){
             Session.set('postCreateErrors', errors);
+        } else {
+            Session.set('postCreateErrors', {});
         }
     },
 
@@ -33,7 +35,7 @@ Template.postCreate.events({
         Meteor.call('postInsert', post, function(errors, result){
             if(errors)
                 return throwError(errors.reason);
-            Router.go('home');
+            Router.go('home', {postsLimit: 5});
         });
     }
 });
