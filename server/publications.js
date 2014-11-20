@@ -14,3 +14,7 @@ Meteor.publish('singlePost', function(id) {
   check(id, String);
   return Posts.find(id);
 });
+
+Meteor.publish('comments', function(){
+    return Comments.find();
+});
