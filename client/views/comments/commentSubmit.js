@@ -1,6 +1,6 @@
 Template.commentSubmit.created = function() {
   Session.set('commentSubmitErrors', {});
-}
+};
 
 Template.commentSubmit.helpers({
   errorMessage: function(field) {
@@ -25,6 +25,9 @@ Template.commentSubmit.events({
     if (! comment.body) {
       errors.body = "Please write some content";
       return Session.set('commentSubmitErrors', errors);
+    } else {
+        errors.body = "";
+        Session.set('commentSubmitErrors', errors);
     }
 
     Meteor.call('commentInsert', comment, function(error, commentId) {

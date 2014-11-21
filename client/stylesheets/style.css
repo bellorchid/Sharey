@@ -18,6 +18,7 @@
     *zoom: 1;
 }
 
+/* post part */
 .post-title {
     font-size: 2rem;
 }
@@ -29,10 +30,18 @@
     font-weight: bold;
 }
 
+/* comment part */
+.comment-meta {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
 .alert {
   animation: fadeOut 2700ms ease-in 0s 1 forwards;
   -webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;
 }
+
+
 @keyframes fadeOut {
   0% {opacity: 0;}
   10% {opacity: 1;}

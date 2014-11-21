@@ -1,9 +1,12 @@
 <template name="commentItem">
-  <li>
-    <h4>
+  <li class="list-group-item">
+  <div class="comment-meta clearfix">
       <span class="author">{{author}}</span>
       <span class="date">on {{submittedText}}</span>
-    </h4>
-    <p>{{body}}</p>
+      {{#if isAuthor}}
+      <span class="glyphicon glyphicon-trash float-right" aria-hidden="true"></span>
+      {{/if}}
+  </div>
+  <p>{{body}}</p>
   </li>
 </template>

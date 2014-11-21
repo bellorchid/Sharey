@@ -1,8 +1,6 @@
 Template.postItem.helpers({
     'isAuthor': function(){
-        if(Meteor.user().username == this.author){
-            return true;
-        }
+        return Meteor.userId() === this.userId;
     },
     'submitted': function(){
         return this.submitted.toLocaleDateString();
