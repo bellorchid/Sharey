@@ -24,8 +24,10 @@ Template.postEdit.events({
         Posts.update(currentPostId, {$set: post},function(error){
             if(error){
                 throwError("Something is wrong!");
+            } else { 
+                throwSuccess("Update success!");
+                Router.go('post.page', {_id: currentPostId}); 
             }
-            else { Router.go('post.page', {_id: currentPostId}); }
         });
     },
 

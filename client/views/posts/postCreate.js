@@ -35,6 +35,7 @@ Template.postCreate.events({
         Meteor.call('postInsert', post, function(errors, result){
             if(errors)
                 return throwError(errors.reason);
+            throwSuccess("Created successful!");
             Router.go('post.page', {_id: result._id});
         });
     }

@@ -1,13 +1,13 @@
-<template name="errors">
-    <section class="errors">
-      {{#each errors}}
-        {{> error}}
-      {{/each}}
+<template name="success">
+    <section class="success">
+        {{#each success}}
+        {{> successed}}
+        {{/each}}
     </section>
 </template>
 
-<template name="error">
-<div class="alert alert-danger alert-dismissible" role="alert">
+<template name="successed">
+<div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
     {{message}}
 </div>
