@@ -35,7 +35,7 @@ Template.postCreate.events({
         Meteor.call('postInsert', post, function(errors, result){
             if(errors)
                 return throwError(errors.reason);
-            Router.go('home', {postsLimit: 5});
+            Router.go('post.page', {_id: result._id});
         });
     }
 });

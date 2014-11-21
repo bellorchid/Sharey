@@ -20,16 +20,12 @@ Template.postEdit.events({
             url: event.target.url.value,
             title: event.target.title.value
         };
-        var errors = validatePost(post);
-        if(errors.title || errors.url){
-            return Session.set('postEditErrors', errors);
-        }
 
         Posts.update(currentPostId, {$set: post},function(error){
             if(error){
-                throwError(error.reason);
+                throwError("Something is wrong!");
             }
-            else { Router.go('home'); }
+            else { Router.go('post.page', {_id: currentPostId}); }
         });
     },
 
