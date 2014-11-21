@@ -36,6 +36,10 @@
     font-size: 1.3rem;
 }
 
+#comment-delete {
+    cursor: pointer;
+}
+
 .alert {
   animation: fadeOut 2700ms ease-in 0s 1 forwards;
   -webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;

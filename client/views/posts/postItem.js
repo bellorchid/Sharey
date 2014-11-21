@@ -4,9 +4,6 @@ Template.postItem.helpers({
     },
     'submitted': function(){
         return this.submitted.toLocaleDateString();
-    },
-    'commentCount': function(){
-        return Comments.find({postId: this._id}).count();
     }
 });
 
