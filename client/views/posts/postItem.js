@@ -1,4 +1,4 @@
-Template.post_item.helpers({
+Template.postItem.helpers({
     'isAuthor': function(){
         if(Meteor.user().username == this.author){
             return true;
@@ -6,5 +6,14 @@ Template.post_item.helpers({
     },
     'submitted': function(){
         return this.submitted.toLocaleDateString();
+    },
+    'commentCount': function(){
+        return Comments.find({postId: this._id}).count();
+    }
+});
+
+Template.postItem.events({
+    'click #discuss': function(){
+        Router.go('post.page', {_id: this._id});
     }
 });

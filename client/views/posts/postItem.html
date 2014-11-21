@@ -1,11 +1,13 @@
 <template name="postItem">
 <div class="panel panel-default">
-    <div class="panel-heading">
+    <div class="panel-heading clearfix">
         <strong class="post-title"><a href="{{url}}">{{title}}</a></strong>
         <span class="post-url">{{url}}</span>
+        <button class="btn btn-primary float-right" id="discuss">discuss</button>
     </div>
     <div class="panel-footer clearfix post-meta">
         <span class="post-author">{{author}}</span> submit on {{submitted}}
+        <span class="post-comment"> | {{commentCount}} comments</span>
         {{#if isAuthor}}
         <a href="{{pathFor route='post.edit'}}" class="float-right">edit</a>
         {{/if}}
