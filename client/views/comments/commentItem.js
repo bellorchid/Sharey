@@ -13,6 +13,7 @@ Template.commentItem.events({
         if(confirm('delete this comment?')){
             var currentCommentId = this._id;
             Comments.remove(currentCommentId);
+            Posts.update(this.postId, {$inc: {commentsCount: -1}});
         }
     }
 });
