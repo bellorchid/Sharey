@@ -1,3 +1,4 @@
 *.swp
 *.swo
 server/secrets.js
+config/settings.json
