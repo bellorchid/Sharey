@@ -2,8 +2,8 @@ Template.mailSubscribe.events({
     'click #subscribe': function(e, template){
         e.preventDefault();
         var email = template.$('#email').val();
-        var apikey = "7a3d641c36ca6486904679eac0c6fc0e-us9";
-        var listid = "6fa4e67eab";
+        var apikey = Meteor.settings.public.mailchimp_apikey;
+        var listid = Meteor.settings.public.mailchimp_list;
         var mailchimp = new MailChimp(apikey, {version: '2.0'});
         mailchimp.call(
             'lists',
