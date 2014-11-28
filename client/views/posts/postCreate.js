@@ -1,6 +1,7 @@
 Template.postCreate.created = function() {
     Session.set('postCreateErrors', {});
 }
+
 Template.postCreate.helpers({
     errorMsg: function(field){
         return Session.get('postCreateErrors')[field];
