@@ -19,3 +19,11 @@ Meteor.publish('comments', function(postId){
     check(postId, String);
     return Comments.find({postId: postId});
 });
+
+Meteor.publish('singleComment', function(commentId){ 
+    check(commentId, String);
+    var commentId = [commentId];
+    var childCommentIds = _.pluck(Comments.find({parentCommentId: commentId}, {fields:{_id:1}}).fetch(), '_id'); //get the array of childCommentIds
+    commentId = commentId.concat(childCommentIds); //join id
+    return Comments.find({_id: {$in: commentId}}); //find comments which _id is in commentId
+});
