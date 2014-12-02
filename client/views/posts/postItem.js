@@ -1,9 +1,14 @@
 Template.postItem.helpers({
-    'isAuthor': function(){
+    isAuthor: function(){
         return Meteor.userId() === this.userId;
     },
-    'submitted': function(){
+    submitted: function(){
         return this.submitted.toLocaleDateString();
+    },
+    domain: function(){
+        var a = document.createElement('a');
+        a.href = this.url;
+        return a.hostname;
     }
 });
 
