@@ -8,5 +8,14 @@
       {{/if}}
   </div>
   <p>{{body}}</p>
+  <span><a href="{{pathFor route="comment.page"}}">reply</a></span>
+  {{#if hasChildComment}}
+    <ul class="list-group">
+        {{#each childComments}}
+            {{> commentItem}}
+        {{/each}}
+    </ul>
+  {{/if}}
   </li>
+
 </template>

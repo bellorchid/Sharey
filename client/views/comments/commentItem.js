@@ -1,9 +1,18 @@
 Template.commentItem.helpers({
-  'submittedText': function() {
+  submittedText: function() {
     return this.submitted.toLocaleDateString();
   },
-  'isAuthor': function(){
+  isAuthor: function(){
       return Meteor.userId() === this.userId;
+  },
+  hasChildComment: function(){
+      var childComments = Comments.find({parentCommentId: this._id});
+      if(childComments) {
+          return true;
+      }
+  },
+  childComments: function() {
+      return Comments.find({parentCommentId: this._id});
   }
 });
 

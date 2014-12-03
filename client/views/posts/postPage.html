@@ -2,11 +2,11 @@
 {{#with post}}
     {{> postItem}}
 {{/with}}
+
 <ul class="comments list-group">
-    {{#each comments}}
-      {{> commentItem}}
-    {{/each}}
+    {{> commentsList}}
 </ul>
+
 {{#if currentUser}}
     {{> commentSubmit}}
   {{else}}
