@@ -27,3 +27,9 @@ Meteor.publish('singleComment', function(commentId){
     commentIds = commentIds.concat(childCommentIds);
     return Comments.find({_id: {$in: commentIds}});
 });
+
+Meteor.publish('commentPost', function(commentId) {
+    check(commentId, String);
+    var postId = Comments.findOne(commentId).postId;
+    return Posts.find(postId);
+});

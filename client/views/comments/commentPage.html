@@ -1,4 +1,7 @@
 <template name="commentPage">
+{{#with post}}
+{{> postItem}}
+{{/with}}
 {{#with comment}}
 <ul class="list-group">
 {{> commentItem}}
