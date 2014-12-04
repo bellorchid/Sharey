@@ -15,12 +15,12 @@ Template.commentReply.events({
   'submit form': function(e, template) {
     e.preventDefault();
     var $body = $(e.target).find('[name=body]');
-    var comment = {
+    var postId = template.data.postId;
+    var reply = {
       body: $body.val(),
-      postId: template.data.postId,
+      postId: postId,
       parentCommentId: this._id,
     };
-    console.log(comment.parentCommentId);
 
     var errors = {};
     if (! comment.body) {
@@ -30,12 +30,14 @@ Template.commentReply.events({
         errors.body = "";
         Session.set('commentReplyErrors', errors);
     }
-
-    Meteor.call('commentReplyInsert', comment, function(error, result) {
+    
+    Meteor.call('commentReplyInsert', reply, function(error, result) {
       if (error){
         throwError(error.reason);
       } else {
-        $body.val('');
+          //TODO fix not fresh
+          //bad fix now
+          Router.go('post.page', {_id: postId});
       }
     });
   }
