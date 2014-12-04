@@ -37,6 +37,7 @@ Template.commentReply.events({
       } else {
           //TODO fix not fresh
           //bad fix now
+          throwSuccess('reply successfully');
           Router.go('post.page', {_id: postId});
       }
     });

@@ -6,12 +6,10 @@ Template.commentItem.helpers({
       return Meteor.userId() === this.userId;
   },
   hasChildComment: function(){
-      var childComments = Comments.find({parentCommentId: this._id});
-      if(childComments) {
-          return true;
-      }
-  },
+      return true;
+   },
   childComments: function() {
+      //console.log(this);
       return Comments.find({parentCommentId: this._id});
   }
 });
