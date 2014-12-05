@@ -33,3 +33,7 @@ Meteor.publish('commentPost', function(commentId) {
     var postId = Comments.findOne(commentId).postId;
     return Posts.find(postId);
 });
+
+Meteor.publish('notifications', function() {
+    return Notifications.find();
+});
