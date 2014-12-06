@@ -1,2 +1,13 @@
 <template name="chatList">
+<ul class="list-group">
+    {{#each users}}
+    {{> userItem}}
+    {{/each}}
+</ul>
+</template>
+
+<template name="userItem">
+<li class="list-group-item">
+{{username}}
+</li>
 </template>
