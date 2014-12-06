@@ -1,0 +1,20 @@
+<template name="chatContainer">
+<ul>
+{{#each messages}}
+{{> messageItem}}
+{{/each}}
+</ul>
+{{> messageSubmit}}
+</template>
+
+<template name="messageItem">
+<li>
+<strong>{{username}}</strong>
+<p>{{message}}</p>
+</li>
+</template>
+
+<template name="messageSubmit">
+<textarea id="message" name="message" cols="30" rows="1"></textarea>
+<button type="submit" class="btn btn-success">Send</button>
+</template>
