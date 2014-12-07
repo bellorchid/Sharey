@@ -1,7 +1,7 @@
 .float-right {
     float: right;
 }
-.folat-left {
+.float-left {
     float: left;
 }
 .clearfix:before,
@@ -45,6 +45,23 @@
   -webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;
 }
 
+/*  chatroom page */
+#chat-container {
+    border: 1px #ddd solid;
+}
+.chat-wrap {
+    height: 350px;
+    margin-top: 10px;
+}
+
+#chat-send {
+    margin-bottom: 16px;
+}
+
+.chat-list {
+    height: 410px;
+    overflow: scroll;
+}
 
 @keyframes fadeOut {
   0% {opacity: 0;}

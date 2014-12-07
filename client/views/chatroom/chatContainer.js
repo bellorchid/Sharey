@@ -1,3 +1,9 @@
+Template.messageItem.helpers({
+    sendat: function() {
+        return this.submitted.toLocaleTimeString();
+    }
+});
+
 Template.messageSubmit.events({
     'click .btn': function(e, p) {
         var body = p.$('#message');
@@ -16,6 +22,5 @@ Template.messageSubmit.events({
                 body.val('');
             }
         });
-        console.log(username);
     }
 });

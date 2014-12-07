@@ -1,5 +1,6 @@
 <template name="chatList">
-<ul class="list-group">
+<ul class="list-group chat-list">
+    <li class="list-group-item">Now have {{userNum}} users</li>
     {{#each users}}
     {{> userItem}}
     {{/each}}
