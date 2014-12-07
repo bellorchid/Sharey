@@ -42,6 +42,6 @@ Meteor.publish('messages', function() {
     return Messages.find();
 });
 
-Meteor.publish('roomUsers', function(){
-    return RoomUsers.find();
-});
+Meteor.publish('chatUsers', function() {
+    return Users.find({away: false});
+})
