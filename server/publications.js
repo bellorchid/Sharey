@@ -41,3 +41,7 @@ Meteor.publish('notifications', function() {
 Meteor.publish('messages', function() {
     return Messages.find();
 });
+
+Meteor.publish('roomUsers', function(){
+    return RoomUsers.find();
+});
