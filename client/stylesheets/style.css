@@ -59,6 +59,7 @@
 }
 
 .chat-list {
+    border: 1px #ddd solid;
     height: 410px;
     overflow: scroll;
 }
