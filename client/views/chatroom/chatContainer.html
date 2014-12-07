@@ -1,0 +1,28 @@
+<template name="chatContainer">
+<div class="chat-wrap">
+<ul>
+{{#each messages}}
+{{> messageItem}}
+{{/each}}
+</ul>
+</div>
+{{> messageSubmit}}
+</template>
+
+<template name="messageItem">
+<li>
+<strong>{{username}}</strong> at <time>{{sendat}}</time>
+<p>{{body}}</p>
+</li>
+</template>
+
+<template name="messageSubmit">
+<div class="row">
+<div class="col-md-11 col-xs-11">
+<input type="text" id="message" name="message" class="form-control" />
+</div>
+<div class="col-md-1 col-xs-1">
+<button type='button' class="btn btn-success pull-right" id="chat-send">Send</button>
+</div>
+</div>
+</template>
