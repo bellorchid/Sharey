@@ -35,5 +35,5 @@ Meteor.publish('commentPost', function(commentId) {
 });
 
 Meteor.publish('notifications', function() {
-    return Notifications.find({userId: this.userId, read: false});
+    return Notifications.find({receiveUser: this.userId, read: false});
 });
