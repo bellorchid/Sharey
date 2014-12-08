@@ -5,7 +5,8 @@ Template.messageItem.helpers({
 });
 
 Template.messageSubmit.events({
-    'click .btn': function(e, p) {
+    'submit .chatForm': function(e, p) {
+        e.preventDefault();
         var body = p.$('#message');
         var username = Meteor.user().username;
         if(!body) {
