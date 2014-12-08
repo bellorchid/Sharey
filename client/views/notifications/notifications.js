@@ -1,16 +1,13 @@
 Template.notifications.helpers({
   notifications: function() {
-    return Notifications.find({userId: Meteor.userId(), read: false});
+    return Notifications.find({receiveUser: Meteor.userId(), read: false});
   },
   notificationCount: function(){
-      return Notifications.find({userId: Meteor.userId(), read: false}).count();
+      return Notifications.find({receiveUser: Meteor.userId(), read: false}).count();
   }
 });
 
 Template.notificationItem.helpers({
-  notificationPostPath: function() {
-    return Router.routes['post.page'].path({_id: this.postId});
-  }
 });
 
 Template.notificationItem.events({
