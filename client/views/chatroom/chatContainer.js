@@ -1,3 +1,5 @@
+Session.set('newMessage', false);
+
 Template.messageItem.helpers({
     sendat: function() {
         return this.submitted.toLocaleTimeString();
@@ -25,3 +27,11 @@ Template.messageSubmit.events({
         });
     }
 });
+
+Template.chatContainer.rendered = function(){
+    Tracker.autorun(function() {
+        var messageNum = Messages.find().count();
+        $('.chat-wrap').animate({ scrollTop: 9999 }, 50);
+        console.log('run');
+    });
+};
