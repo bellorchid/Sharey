@@ -52,6 +52,7 @@
 .chat-wrap {
     height: 350px;
     margin-top: 10px;
+    overflow: scroll;
 }
 
 #chat-send {
