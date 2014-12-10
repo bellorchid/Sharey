@@ -15,5 +15,9 @@ Template.postItem.helpers({
 Template.postItem.events({
     'click #discuss': function(){
         Router.go('post.page', {_id: this._id});
+    },
+    'click .upvote': function(e, p) {
+        e.preventDefault();
+        Meteor.call('upvote', this._id);
     }
 });
