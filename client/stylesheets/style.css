@@ -55,7 +55,7 @@
     border: 1px #ddd solid;
 }
 .chat-wrap {
-    height: 400px;
+    height: 380px;
     margin-top: 10px;
     overflow: auto;
 }

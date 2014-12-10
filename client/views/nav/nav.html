@@ -22,8 +22,8 @@
      </ul>
      <ul class="nav navbar-nav navbar-right">
           {{#if currentUser}}
-          <li class="{{activeRouteClass 'page.chatroom'}}"><a href="{{pathFor route='page.chatroom'}}">chatroom</a></li>
-          <li class="{{activeRouteClass 'post.create'}}"><a href="{{pathFor route='post.create'}}">Post</a></li>
+          <li class="{{activeRouteClass 'page.chatroom'}}"><a href="{{pathFor route='page.chatroom'}}">反馈</a></li>
+          <li class="{{activeRouteClass 'post.create'}}"><a href="{{pathFor route='post.create'}}">提交链接</a></li>
           <li class="dropdown">{{> notifications}}</li>
           {{/if}}
           {{> loginButtons}}
