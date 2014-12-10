@@ -1,10 +1,7 @@
 <template name="postItem">
-<!--<div class="row">-->
-    <!--<div class="col-md-1 col-xs-1"><a href="#" class="upvote btn btn-default">⬆</a></div>-->
-
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
-            <a href="#" class="upvote btn btn-default">⬆</a>
+            <a href="#" class="upvote btn btn-default {{upvotedClass}}">⬆</a>
             <strong class="post-title"><a href="{{url}}" target="_blank">{{title}}</a></strong>
             <span class="post-url">{{domain}}</span>
             <button class="btn btn-primary float-right" id="discuss">discuss</button>
@@ -19,6 +16,4 @@
             {{/if}}
         </div>
     </div>
-    <!--</div>-->
-<!--</div>-->
 </template>
