@@ -18,7 +18,7 @@
     *zoom: 1;
 }
 
-/* post part */
+/* post item */
 .post-title {
     font-size: 2rem;
 }
@@ -28,6 +28,11 @@
 }
 .post-author {
     font-weight: bold;
+}
+
+.upvote {
+    margin-right: 5px;
+    cursor: pointer;
 }
 
 /* comment part */

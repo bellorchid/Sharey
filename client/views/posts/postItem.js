@@ -13,9 +13,9 @@ Template.postItem.helpers({
     upvotedClass: function() {
         var userId = Meteor.userId();
         if (userId && !_.include(this.upvoters, userId)) {
-          return 'btn-primary upvotable';
+          return 'fa-thumbs-o-up';
         } else {
-          return 'disabled';
+          return 'fa-thumbs-up';
         }
     }
 });
@@ -24,7 +24,7 @@ Template.postItem.events({
     'click #discuss': function(){
         Router.go('post.page', {_id: this._id});
     },
-    'click .upvotable': function(e, p) {
+    'click .fa-thumbs-o-up': function(e, p) {
         e.preventDefault();
         Meteor.call('upvote', this._id);
     }
