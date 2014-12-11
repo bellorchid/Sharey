@@ -1,6 +1,7 @@
 <template name="commentItem">
   <li class="list-group-item">
   <div class="comment-meta clearfix">
+      <span class="upvote fa {{upvotedClass}}"></span>
       <span class="author">{{author}}</span>
       <span class="date">on {{submittedText}}</span>
       {{#if isAuthor}}

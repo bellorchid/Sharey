@@ -9,8 +9,16 @@ Template.commentItem.helpers({
       return true;
    },
   childComments: function() {
-      //console.log(this);
       return Comments.find({parentCommentId: this._id});
+  },
+  upvotedClass: function() {
+    var userId = Meteor.userId();
+    if (userId && !_.include(this.upvoters, userId)) {
+      return 'fa-thumbs-o-up';
+    } else {
+      return 'fa-thumbs-up';
+    }
+
   }
 });
 
@@ -22,5 +30,10 @@ Template.commentItem.events({
             Comments.remove(currentCommentId);
             Posts.update(this.postId, {$inc: {commentsCount: -1}});
         }
+    },
+    'click .fa-thumbs-o-up': function(e, p) {
+        e.preventDefault();
+        Meteor.call('commentUpvote', this._id);
     }
+
 });
