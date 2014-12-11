@@ -1,3 +1,9 @@
+Meteor.publish('user', function(userId) {
+    check(userId, String);
+
+    return Users.find({_id: userId});
+});
+
 Meteor.publish('posts', function(options){
     check(options, {
         sort: Object,

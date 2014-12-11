@@ -2,7 +2,7 @@
 <section class="user-profile">
     <div class="row">
     <div class="col-md-6 col-md-offset-3">
-    <img src="http://pbs.twimg.com/profile_images/510254575350075393/99zwHOiE_200x200.jpeg" alt="avatar" class="img-responsive img-circle avatar">
+    <img src="https://avatars.githubusercontent.com/birdeggegg" alt="avatar" class="img-responsive img-circle avatar">
     </div>
     </div>
     <div class="row">
@@ -11,19 +11,23 @@
         <tbody>
             <tr>
                 <td>Username:</td>
-                <td>birdgg</td>
+                <td>{{username}}</td>
             </tr>
             <tr>
-                <td>Member since:</td>
-                <td>Thu Nov 06 2014 16:21:28 GMT+0800 (CST)</td>
+                <td>email:</td>
+                <td>{{email}}</td>
             </tr>
             <tr>
                 <td>Bio:</td>
-                <td>hello world</td>
+                <td>{{profile.bio}}</td>
             </tr>
             <tr>
                 <td>website:</td>
-                <td>birdeggegg1</td>
+                <td>{{profile.website}}</td>
+            </tr>
+            <tr>
+                <td>Github username:</td>
+                <td>{{profile.github}}</td>
             </tr>
             <tr>
                 <td>post Number:</td>
@@ -31,6 +35,11 @@
             </tr>
         </tbody>
     </table>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+    <button class="btn btn-danger">Edit Profile</button>
     </div>
     </div>
 </section>
