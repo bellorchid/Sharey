@@ -11,6 +11,13 @@ Template.commentItem.helpers({
   childComments: function() {
       return Comments.find({parentCommentId: this._id});
   },
+  votes: function() {
+      if(this.votes) {
+          return this.votes;
+      } else {
+          return 0;
+      }
+  },
   upvotedClass: function() {
     var userId = Meteor.userId();
     if (userId && !_.include(this.upvoters, userId)) {

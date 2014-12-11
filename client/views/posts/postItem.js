@@ -10,6 +10,13 @@ Template.postItem.helpers({
         a.href = this.url;
         return a.hostname;
     },
+    votes: function() {
+        if(this.votes){
+            return this.votes;
+        } else {
+            return 0;
+        }
+    },
     upvotedClass: function() {
         var userId = Meteor.userId();
         if (userId && !_.include(this.upvoters, userId)) {
