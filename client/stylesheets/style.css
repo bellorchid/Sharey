@@ -45,6 +45,16 @@
     cursor: pointer;
 }
 
+/* user profile */
+.avatar {
+    height: 80px;
+    width: 80px;
+}
+
+.user-profile .row {
+    margin-top: 20px;
+}
+
 .alert {
   animation: fadeOut 2700ms ease-in 0s 1 forwards;
   -webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;
