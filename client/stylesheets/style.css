@@ -21,6 +21,14 @@ body {
     *zoom: 1;
 }
 
+/* nav */
+.env-position {
+    top: 3px;
+}
+.badge-red {
+    background: rgba(237,28,36,0.7);
+}
+
 /* post item */
 .post-single {
     box-shadow: 0 5px 5px #ddd;

@@ -1,8 +1,8 @@
 <template name="notifications">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-      <span class="glyphicon glyphicon-envelope"></span>
+      <span class="glyphicon glyphicon-envelope env-position"></span>
     {{#if notificationCount}}
-      <span class="badge badge-inverse">{{notificationCount}}</span>
+      <span class="badge badge-inverse badge-red">{{notificationCount}}</span>
     {{/if}}
   </a>
   <ul class="notification dropdown-menu">
