@@ -1,17 +1,20 @@
 <template name="commentItem">
-  <li class="list-group-item">
-  <div class="comment-meta clearfix">
-      <span class="upvote fa {{upvotedClass}}"></span>
-      <span class="author">{{author}}</span>
-      <span class="date">on {{submittedText}}</span>
-      ,
-      <span class="upvote">{{votes}} points</span>
-      {{#if isAuthor}}
-      <span class="glyphicon glyphicon-trash float-right" aria-hidden="true" id="comment-delete"></span>
-      {{/if}}
+  <li class="list-group-item comment-item">
+  <div class="comment-single">
+      <div class="comment-meta clearfix">
+          <span class="comment-upvote fa {{upvotedClass}} float-left"></span>
+          {{> avatar userId=this.userId shape="circle" size="small" class="float-left comment-avatar"}}
+          <span class="author">{{author}}</span>
+          <span class="date">on {{submittedText}}</span>
+          ,
+          <span class="upvote">{{votes}} points</span>
+          {{#if isAuthor}}
+          <span class="glyphicon glyphicon-trash float-right" aria-hidden="true" id="comment-delete"></span>
+          {{/if}}
+      </div>
+      <p class="comment-body">{{body}}</p>
+      <span class="comment-reply"><a href="{{pathFor route="comment.page"}}">reply</a></span>
   </div>
-  <p>{{body}}</p>
-  <span><a href="{{pathFor route="comment.page"}}">reply</a></span>
   {{#if hasChildComment}}
     <ul class="list-group">
         {{#each childComments}}

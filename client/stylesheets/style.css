@@ -1,3 +1,6 @@
+body {
+    background: rgba(238,238,238,0.2);
+}
 .float-right {
     float: right;
 }
@@ -19,12 +22,19 @@
 }
 
 /* post item */
+.post-single {
+    box-shadow: 0 5px 5px #ddd;
+    margin-bottom: 20px;
+}
 .post-title {
     font-size: 2rem;
 }
 .post-url {
     font-size: 1.5rem;
     color: #b3c1c6;
+}
+.post-meta {
+    background: #fff;
 }
 .post-author {
     font-weight: bold;
@@ -36,9 +46,37 @@
 }
 
 /* comment part */
+.comment-item {
+    border: 0px solid #000;
+    background: rgb(248,248,248);
+}
+
+.comment-single {
+    margin-bottom: 5px;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 5px 5px #ddd;
+}
 .comment-meta {
     font-weight: bold;
     font-size: 1.3rem;
+}
+
+.comment-upvote {
+    margin-top: 5px;
+    margin-right: 20px;
+}
+
+.comment-avatar {
+   margin-right: 20px;
+}
+
+.comment-body {
+    margin-left: 81px;
+}
+
+.comment-reply {
+    margin-left: 81px;
 }
 
 #comment-delete {
@@ -46,11 +84,6 @@
 }
 
 /* user profile */
-.avatar {
-    height: 80px;
-    width: 80px;
-}
-
 .user-profile .row {
     margin-top: 20px;
 }
