@@ -4,7 +4,7 @@
             <span class="upvote fa {{upvotedClass}}"></span>
             <strong class="post-title"><a href="{{url}}" target="_blank">{{title}}</a></strong>
             <span class="post-url">{{domain}}</span>
-            <button class="btn btn-primary float-right" id="discuss">discuss</button>
+            <button class="btn btn-primary float-right" id="discuss">评论</button>
         </div>
 
         <div class="panel-footer clearfix post-meta">
@@ -12,7 +12,7 @@
             <span class="post-author">{{author}}</span> on {{submitted}}
             <span class="post-comment"> | {{commentsCount}} comments</span>
             {{#if isAuthor}}
-            <a href="{{pathFor route='post.edit'}}" class="float-right">edit</a>
+            <a href="{{pathFor route='post.edit'}}" class="float-right">编辑</a>
             {{/if}}
         </div>
     </div>
