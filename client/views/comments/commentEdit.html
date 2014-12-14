@@ -1,0 +1,10 @@
+<template name="commentEdit">
+{{#with comment}}
+<form id="commentEdit-form">
+    <div class="form-group">
+    <textarea id="body" class="form-control" name="" cols="30" rows="20">{{body}}</textarea>
+    </div>
+    <button class="btn btn-success update" type="submit">更新</button>
+</form>
+{{/with}}
+</template>

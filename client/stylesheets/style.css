@@ -86,6 +86,9 @@ body {
 .comment-reply {
     margin-left: 86px;
 }
+#comment-edit {
+    cursor: pointer;
+}
 
 #comment-delete {
     cursor: pointer;

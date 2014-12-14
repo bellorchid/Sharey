@@ -44,6 +44,9 @@ Template.commentItem.events({
             //Posts.update(this.postId, {$inc: {commentsCount: -1}});
         //}
     /*},*/
+    'click #comment-edit': function() {
+        Router.go('comment.edit', {_id: this._id});
+    },
     'click .fa-thumbs-o-up': function(e, p) {
         e.preventDefault();
         Meteor.call('commentUpvote', this._id);

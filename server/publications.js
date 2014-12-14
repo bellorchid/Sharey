@@ -37,6 +37,11 @@ Meteor.publish('singleComment', function(commentId){
     return Comments.find({_id: {$in: commentIds}});
 });
 
+Meteor.publish('commentEdit', function(commentId) {
+    check(commentId, String);
+    return Comments.find(commentId);
+});
+
 Meteor.publish('commentPost', function(commentId) {
     check(commentId, String);
     var postId = Comments.findOne(commentId).postId;
