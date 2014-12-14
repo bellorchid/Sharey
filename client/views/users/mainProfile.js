@@ -1,6 +1,9 @@
 Template.mainProfile.helpers({
     email: function() {
         return this.emails[0].address;
+    },
+    isSameUser: function() {
+        return Meteor.userId() === this._id;
     }
 });
 

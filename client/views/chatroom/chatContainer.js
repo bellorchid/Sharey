@@ -11,7 +11,7 @@ Template.messageSubmit.events({
         e.preventDefault();
         var body = p.$('#message');
         var username = Meteor.user().username;
-        if(!body) {
+        if(!body.val()) {
             throwError('Can\'t be empty');
         }
         var message = {
