@@ -2,7 +2,7 @@
 <section class="user-profile">
     <div class="row">
     <div class="col-md-6 col-md-offset-3">
-        {{> avatar user=this shape="rounded" size="large" class="img-responsive"}}
+        <img src="{{avatar}}" class="img-responsive img-circle avatar avatar-normal" />
     </div>
     </div>
     <div class="row">
@@ -10,28 +10,28 @@
     <table class="table table-hover table-responsive">
         <tbody>
             <tr>
-                <td>Username:</td>
+                <td>用户名:</td>
                 <td>{{username}}</td>
             </tr>
             <tr>
-                <td>email:</td>
+                <td>邮箱:</td>
                 <td>{{email}}</td>
             </tr>
             <tr>
-                <td>Bio:</td>
+                <td>简介:</td>
                 <td>{{profile.bio}}</td>
             </tr>
             <tr>
-                <td>website:</td>
+                <td>个人网站:</td>
                 <td>{{profile.website}}</td>
             </tr>
             <tr>
-                <td>Github username:</td>
+                <td>Github:</td>
                 <td>{{profile.github}}</td>
             </tr>
             <tr>
                 <td>post Number:</td>
-                <td>12</td>
+                <td>{{profile.postCount}}</td>
             </tr>
         </tbody>
     </table>

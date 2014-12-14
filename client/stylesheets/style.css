@@ -71,7 +71,7 @@ body {
 }
 
 .comment-upvote {
-    margin-top: 5px;
+    margin-top: 15px;
     margin-right: 20px;
 }
 
@@ -80,11 +80,11 @@ body {
 }
 
 .comment-body {
-    margin-left: 81px;
+    margin-left: 86px;
 }
 
 .comment-reply {
-    margin-left: 81px;
+    margin-left: 86px;
 }
 
 #comment-delete {
@@ -94,6 +94,21 @@ body {
 /* user profile */
 .user-profile .row {
     margin-top: 20px;
+}
+
+.avatar {
+    display: inline;
+}
+
+.avatar-normal {
+    width: 100px;
+    height: 100px;
+}
+
+.avatar-small {
+    margin-right: 5px;
+    width: 50px;
+    height: 50px;
 }
 
 .alert {

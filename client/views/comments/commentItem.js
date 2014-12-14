@@ -25,19 +25,25 @@ Template.commentItem.helpers({
     } else {
       return 'fa-thumbs-up';
     }
-
+  },
+  avatar: function() {
+    var github = Users.findOne({username: this.author}).profile.github;
+    var avatarUrl = "https://avatars.githubusercontent.com/" + github;
+    //console.log(github);
+    return avatarUrl;
   }
 });
 
 Template.commentItem.events({
-    'click #comment-delete': function(e, template){
-        e.preventDefault();
-        if(confirm('delete this comment?')){
-            var currentCommentId = this._id;
-            Comments.remove(currentCommentId);
-            Posts.update(this.postId, {$inc: {commentsCount: -1}});
-        }
-    },
+    //TODO delete permision
+    /*'click #comment-delete': function(e, template){*/
+        //e.preventDefault();
+        //if(confirm('delete this comment?')){
+            //var currentCommentId = this._id;
+            //Comments.remove(currentCommentId);
+            //Posts.update(this.postId, {$inc: {commentsCount: -1}});
+        //}
+    /*},*/
     'click .fa-thumbs-o-up': function(e, p) {
         e.preventDefault();
         Meteor.call('commentUpvote', this._id);

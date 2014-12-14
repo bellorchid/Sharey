@@ -4,6 +4,11 @@ Template.mainProfile.helpers({
     },
     isSameUser: function() {
         return Meteor.userId() === this._id;
+    },
+    avatar: function() {
+        var avatarUrl =  "https://avatars.githubusercontent.com/" + this.profile.github; 
+        console.log(this);
+        return avatarUrl;
     }
 });
 

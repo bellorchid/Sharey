@@ -3,13 +3,13 @@
   <div class="comment-single">
       <div class="comment-meta clearfix">
           <span class="comment-upvote fa {{upvotedClass}} float-left"></span>
-          {{> avatar userId=this.userId shape="circle" size="small" class="float-left comment-avatar"}}
+          <img src="{{avatar}}"  class="img-responsive img-circle avatar avatar-small" />
           <span class="author">{{author}}</span>
           <span class="date">on {{submittedText}}</span>
           ,
           <span class="upvote">{{votes}} points</span>
           {{#if isAuthor}}
-          <span class="glyphicon glyphicon-trash float-right" aria-hidden="true" id="comment-delete"></span>
+          <span class="glyphicon glyphicon-pencil float-right" aria-hidden="true" id="comment-edit"></span>
           {{/if}}
       </div>
       <p class="comment-body">{{body}}</p>

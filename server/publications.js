@@ -1,7 +1,10 @@
 Meteor.publish('user', function(userId) {
     check(userId, String);
-
     return Users.find({_id: userId});
+});
+
+Meteor.publish('allUsers', function() {
+    return Users.find();
 });
 
 Meteor.publish('posts', function(options){
