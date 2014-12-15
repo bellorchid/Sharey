@@ -9,7 +9,7 @@
 
         <div class="panel-footer clearfix post-meta">
             <span class="post-vote">{{votes}} points by </span>
-            <span class="post-author">{{author}}</span> on {{submitted}}
+            <span class="post-author"><a href="{{authorLink}}">{{author}}</a></span> on {{submitted}}
             <span class="post-comment"> | {{commentsCount}} comments</span>
             {{#if isAuthor}}
             <a href="{{pathFor route='post.edit'}}" class="float-right">编辑</a>

@@ -7,13 +7,12 @@ Template.mainProfile.helpers({
     },
     avatar: function() {
         var avatarUrl =  "https://avatars.githubusercontent.com/" + this.profile.github; 
-        console.log(this);
         return avatarUrl;
     }
 });
 
 Template.mainProfile.events({
     'click .profile-edit': function(e, p) {
-        Router.go('user.edit', {_id: this._id});
+        Router.go('user.edit', {_name: this.username});
     }
 });

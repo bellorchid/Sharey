@@ -10,7 +10,7 @@ Template.userEdit.events({
         var github = e.target.githubName.value;
 
         if(!username) {
-            throwError('username can\'t be empty');
+            throwError('用户名不能为空');
         }
         var user = {
             username: username,

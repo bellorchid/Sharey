@@ -5,6 +5,9 @@ Template.commentItem.helpers({
   isAuthor: function(){
       return Meteor.userId() === this.userId;
   },
+  authorLink: function() {
+      return 'http://sharey.birdgg.me/users/' + this.author;
+  },
   hasChildComment: function(){
       return true;
    },

@@ -1,6 +1,6 @@
-Meteor.publish('user', function(userId) {
-    check(userId, String);
-    return Users.find({_id: userId});
+Meteor.publish('user', function(name) {
+    check(name, String);
+    return Users.find({username: name});
 });
 
 Meteor.publish('allUsers', function() {

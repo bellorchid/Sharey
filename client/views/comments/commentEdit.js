@@ -6,6 +6,7 @@ Template.commentEdit.events({
         //console.log(body);
         if(!body) {
             throwError('不能为空！');
+            return ;
         }
         
         Comments.update(this._id, {$set: {body: body}}, function(error,result) {
