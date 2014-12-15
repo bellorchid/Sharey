@@ -23,8 +23,10 @@ Template.commentItem.helpers({
   },
   upvotedClass: function() {
     var userId = Meteor.userId();
-    if (userId && !_.include(this.upvoters, userId)) {
-      return 'fa-thumbs-o-up';
+    if(!userId) {
+        return 'fa-thumbs-o-up';
+    } else if (userId && !_.include(this.upvoters, userId)) {
+      return 'fa-thumbs-o-up votable';
     } else {
       return 'fa-thumbs-up';
     }
@@ -50,7 +52,7 @@ Template.commentItem.events({
     'click #comment-edit': function() {
         Router.go('comment.edit', {_id: this._id});
     },
-    'click .fa-thumbs-o-up': function(e, p) {
+    'click .votable': function(e, p) {
         e.preventDefault();
         Meteor.call('commentUpvote', this._id);
     }

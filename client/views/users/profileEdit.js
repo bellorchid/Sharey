@@ -25,6 +25,7 @@ Template.userEdit.events({
                 throwError("出问题了～");
             } else {
                 throwSuccess("更新成功！");
+                Router.go('user.profile', {_name: username});
             }
         });
     }

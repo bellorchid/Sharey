@@ -7,7 +7,12 @@
 {{> commentItem}}
 </ul>
 
+{{#if currentUser}}
 {{> commentReply}}
+{{else}}
+<p class="text-info">你需要登陆才能评论</p>
+{{/if}}
+
 {{/with}}
 
 </template>
