@@ -18,7 +18,7 @@ Template.postItem.helpers({
         }
     },
     authorLink: function() {
-        return 'http://sharey.birdgg.me/users/' + this.author;
+        return 'http://localhost:3000/users/' + this.author;
     },
     upvotedClass: function() {
         var userId = Meteor.userId();

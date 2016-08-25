@@ -18,7 +18,7 @@
       <ul class="nav navbar-nav">
           <li class="{{activeRouteClass 'newPosts'}}"><a href="{{pathFor 'newPosts' postsLimit=10 }}">最新</a></li>
           <li class="{{activeRouteClass 'bestPosts'}}"><a href="{{pathFor 'bestPosts' postsLimit=10 }}">最热</a></li>
-          <li><a href="javascript:window.location='http://sharey.birdgg.me/post/submit?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href)">小书签</a></li>
+          <li><a href="javascript:window.location='http://localhost:3000/post/submit?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href)">小书签</a></li>
      </ul>
      <ul class="nav navbar-nav navbar-right">
           {{#if currentUser}}
