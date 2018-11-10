@@ -3,3 +3,4 @@
 server/secrets.js
 config/settings.json
 .idea/
+.DS_Store
