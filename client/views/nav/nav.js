@@ -8,5 +8,6 @@ Template.nav.helpers({
     });
 
     return active && 'active';
-  }
+  },
+  
 });

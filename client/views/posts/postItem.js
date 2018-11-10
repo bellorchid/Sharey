@@ -18,7 +18,7 @@ Template.postItem.helpers({
         }
     },
     authorLink: function() {
-        return 'http://localhost:3000/users/' + this.author;
+        return 'http://'+localtion.host+'/users/' + this.author;
     },
     upvotedClass: function() {
         var userId = Meteor.userId();
